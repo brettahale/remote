@@ -1,30 +1,200 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+body {
+	background: url('http://subtlepatterns.com/patterns/micro_carbon.png');
+	padding:0px;
+	margin:0px;
+}
+section {
+	width: 80px;
+	padding:10px 6px;
+	position: relative;
+	text-align: center;
+	clear:all;
 }
 
-.menu:before {
-  content: "[";
+button.control{
+	color:#fff;
 }
 
-.menu:after {
-  content: "]";
+button.toggle.control{
+	color: rgb(37,37,37);
 }
 
-.menu > li {
-  display: inline;
+:active, :focus {
+	outline: 0;
+}
+/** Font-Face **/
+@font-face {
+  font-family: "FontAwesome";
+  src: url("fonts/fontawesome-webfont.svg");
+  src: url("fonts/fontawesome-webfont.eot?#iefix") format('eot'), 
+  	   url("fonts/fontawesome-webfont.woff") format('woff'), 
+  	   url("fonts/fontawesome-webfont.ttf") format('truetype'), 
+  	   url("fonts/fontawesome-webfont.svg#FontAwesome") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/** Styling the Button **/
+button.control {
+	font-family: "FontAwesome";
+	text-shadow: 0px 1px 1px rgba(250,250,250,0.1);
+	font-size: 32pt;
+	display: block;
+	position: relative;
+	text-decoration: none;
+	margin:0 auto;
+    box-shadow: 0px 3px 0px 0px rgb(34,34,34),
+    			0px 7px 10px 0px rgb(17,17,17),
+    			inset 0px 1px 1px 0px rgba(250, 250, 250, .2), 
+    			inset 0px -12px 35px 0px rgba(0, 0, 0, .5);
+	width: 70px;
+	height: 70px;
+	border: 0;
+	border-radius: 35px;
+	text-align: center;
+	line-height: 79px;
+	background-color: rgb(83,87,93);
+
+	transition: color 350ms ease, text-shadow 350ms;
+		-o-transition: color 350ms ease, text-shadow 350ms;
+		-moz-transition: color 350ms ease, text-shadow 350ms;
+		-webkit-transition: color 350ms ease, text-shadow 350ms;
+}
+.power.toggle:before {
+	content: "";
+	width: 80px;
+	height: 80px;
+	display: block;
+	z-index: -2;
+	position: absolute;
+	background-color: rgb(26,27,29);
+	left: -5px;
+	top: -2px;
+	border-radius: 40px;
+	box-shadow: 0px 1px 0px 0px rgba(250,250,250,0.1), 
+			 	inset 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+button:active {
+    box-shadow: 0px 0px 0px 0px rgb(34,34,34),
+    			0px 3px 7px 0px rgb(17,17,17),
+    			inset 0px 1px 1px 0px rgba(250, 250, 250, .2), 
+    			inset 0px -10px 35px 5px rgba(0, 0, 0, .5);
+    background-color: rgb(83,87,93);
+  	top: 3px;
+}
+button.toggle.on, button.arrow:active {
+    box-shadow: 0px 0px 0px 0px rgb(34,34,34),
+    			0px 3px 7px 0px rgb(17,17,17), 
+    			inset 0px 1px 1px 0px rgba(250, 250, 250, .2), 
+    			inset 0px -10px 35px 5px rgba(0, 0, 0, .5);
+    background-color: rgb(83,87,93);
+  	top: 3px;
+ 	color: #55FF1F;
+  	text-shadow: 0px 0px 3px rgb(250,250,250);
+}
+button.toggle:active:before, button.toggle.on:before {
+	top: -5px;
+	background-color: rgb(26,27,29);
+	box-shadow: 0px 1px 0px 0px rgba(250,250,250,0.1), 
+			 	inset 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+/* Styling the Indicator light */
+button.toggle + span {
+	display: block;
+	width: 20px;
+	height: 8px;
+	background-color: rgb(226,0,0);
+	box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),
+				0px 0px 3px 2px rgba(226,0,0,0.5);
+ 	border-radius: 4px;
+ 	clear: both;
+	margin: 14px auto 0;
+ 	transition: background-color 350ms, box-shadow 700ms;
+	-o-transition: background-color 350ms, box-shadow 700ms;
+	-moz-transition: background-color 350ms, box-shadow 700ms;
+	-webkit-transition: background-color 350ms, box-shadow 700ms;
+}
+button.toggle.on + span {
+	box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),
+				0px 0px 3px 2px rgba(135,187,83,0.5);
+	background-color: #55FF1F;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+button.arrow{
+	color:#fff;
+	font-size:54px;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+button.arrow + .label{
+	position: relative;
+	width: 100%;
+	color: #fff;
+	line-height: 26px;
+	height: 24px;
+}
+
+
+button.arrow.up{
+	border-radius: 35px 35px 0 0;
+
+}
+button.arrow:active{
+	color:#cecece;
+}
+
+button.arrow.down{
+	border-radius: 0 0 35px 35px;
+}
+
+nav{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+
+#clock{
+	color:#fff;
+	font-size:16px;
+}
+
+li.fa-shield{color:#51ff1f;}
+
+.navbar-remote{
+	border-bottom:rgb(35,35,35) 2px solid;
+	border-radius:0;
+}
+
+.navbar-nav.navbar-right:last-child{
+	margin-right:0;
+}
+
+.form-control{
+	color:#fff;
+	background:transparent !important;
+	border:none;
+	border-radius:0;
+}
+
+.nav .dropdown a{
+	color:#fff;
+	font-size:18px;
+}
+
+.nav > li > a:hover{
+	background-color:rgb(20,20,20);
+}
+.nav .dropdown-menu > li > a{
+	background: rgb(20,20,20);
+	color:#e1e1e1;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+background-color: rgb(20,20,20);
+border-color: rgb(20,20,20);
+}
+.open > .dropdown-menu{
+	background: rgb(20,20,20);
+}
+
+li.navbar-text{
+	color:#e1e1e1;
 }
