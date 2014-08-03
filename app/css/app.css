@@ -2,6 +2,7 @@ body {
 	background: url('http://subtlepatterns.com/patterns/micro_carbon.png');
 	padding:0px;
 	margin:0px;
+    color:#e1e1e1;
 }
 section {
 	width: 80px;
@@ -197,4 +198,19 @@ border-color: rgb(20,20,20);
 
 li.navbar-text{
 	color:#e1e1e1;
+}
+
+footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+footer .nav{
+    margin:0 auto;
+}
+
+footer.navbar-remote{
+    border-bottom:0;
+    border-top:rgb(35,35,35) 2px solid;
 }
